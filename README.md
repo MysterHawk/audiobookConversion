@@ -1,17 +1,4 @@
-ffmpeg -i book.aax book.wav
-
-python3 fastbook.py --audio_path=2.wav --output_path=2-fast.wav --loud_speed=1 --quiet_speed=5
-python3 fastbook.py --audio_path=3.wav --output_path=3-fast.wav --loud_speed=1 --quiet_speed=5
-python3 fastbook.py --audio_path=4.wav --output_path=4-fast.wav --loud_speed=1 --quiet_speed=5
-
-
-.\ffmpeg.exe -i .\1-fast.wav -c:a libopus -b:a 48k .\1-fast.opus
-.\ffmpeg.exe -i .\2-fast.wav -c:a libopus -b:a 48k .\2-fast.opus
-.\ffmpeg.exe -i .\3-fast.wav -c:a libopus -b:a 48k .\3-fast.opus
-.\ffmpeg.exe -i .\4-fast.wav -c:a libopus -b:a 48k .\4-fast.opus
-
-
-The circle goes like this
+# The circle goes like this
 
 You convert everything in WAV (lopp_conversion_wav) --> cut the silence between the audiobooks-->
 --> convert everything to opus
@@ -25,7 +12,7 @@ I have to say, it script to cut the space was balanced, but you need a bit of ti
 The original script is from this article:
 https://davidbieber.com/snippets/2020-03-02-fastbook/
 
-
-
 The fastbook script has a bug though, it work with mono audiobook not stereo, I tried to fix it in the script,
 but I couldnt do it!
+
+So for this I forced the conversion to WAV in mono atm, but I will fix it in the future this.
